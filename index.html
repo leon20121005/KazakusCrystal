@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kazakus's Crystal</title>
+    </head>
+
+    <body>
+        <style>
+            body
+            {
+                background-image: url('background.jpg');
+                background-size: cover;
+                overflow: hidden;
+            }
+        </style>
+
+        <script>
+            document.onclick = play;
+
+            function play()
+            {
+                var audio = new Audio('voice.mp3');
+                audio.play();
+
+                var x = event.clientX;
+                var y = event.clientY;
+                var card = document.createElement('img');
+                card.src = 'http://gametsg.techbang.com/hs/icon300/c110f6fc6cc75d37dd00c1677fa54280.png';
+                card.style.display = '';
+                card.style.position = 'absolute';
+                card.style.left = x - 200 + 'px';
+                card.style.top = y - 140 + 'px';
+                this.body.appendChild(card);
+            }
+        </script>
+    </body>
+</html>
+
+<!-- References:
+http://gametsg.techbang.com/hs/index.php?view=item&item=18141#detail
+https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click 
+https://stackoverflow.com/questions/32913026/click-a-button-to-play-sound-on-javascript
+https://stackoverflow.com/questions/321239/event-on-a-click-everywhere-on-the-page-outside-of-the-specific-div  -->
